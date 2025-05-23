@@ -10,6 +10,29 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+# Find dependencies
+find_package(rclpy REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+
+## Declare message files
+set(msg_files
+  "msg/OpticalFlow.msg"
+  "msg/TauComputation.msg"
+  "msg/Control.msg"
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/OpticalFlow.msg
+  msg/TauComputation.msg
+  msg/Control.msg
+  DEPENDENCIES std_msgs sensor_msgs builtin_interfaces
+)
+
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
