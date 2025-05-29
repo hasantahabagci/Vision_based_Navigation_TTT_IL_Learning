@@ -36,16 +36,16 @@ def generate_launch_description():
         )
     )
 
-    # Spawn the robot in Gazebo
+
     spawn_jackal = ExecuteProcess(
         cmd=[
-            'ros2', 'run', 'gazebo_ros', 'spawn_entity.py',
-            '-entity', 'jackal',
-            '-topic', 'robot_description',
+            'ros2', 'run', 'ros_gz_sim', 'create',
+            '--name', 'jackal',
             '-x', LaunchConfiguration('x'),
             '-y', LaunchConfiguration('y'),
             '-z', LaunchConfiguration('z'),
-            '-Y', LaunchConfiguration('yaw')
+            '-Y', LaunchConfiguration('yaw'),
+            '-topic', 'robot_description'
         ],
         output='screen'
     )

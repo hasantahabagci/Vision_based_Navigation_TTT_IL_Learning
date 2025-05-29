@@ -1,4 +1,5 @@
 from launch import LaunchDescription
+from launch.actions import ExecuteProcess  # Add this import at the top if not already present
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
@@ -9,7 +10,6 @@ import os
 
 def generate_launch_description():
     # Set up paths
-    gazebo_ros_dir = get_package_share_directory('gazebo_ros')
     vbn_dir = get_package_share_directory('vision_based_navigation_ttt')
 
     # Launch arguments
@@ -37,14 +37,12 @@ def generate_launch_description():
     )
 
     # Include Gazebo world
-    empty_world_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(gazebo_ros_dir, 'launch', 'gazebo.launch.py')
-        ),
-        launch_arguments={
-            'world': os.path.join(vbn_dir, 'GazeboWorlds', 'corridor.world')
-        }.items()
+# Launch Gazebo with your world using gz sim
+    gz_sim_world = ExecuteProcess(
+        cmd=['gz', 'sim', os.path.join(vbn_dir, 'GazeboWorlds', 'corridor.world')],
+        output='screen'
     )
+
 
     # Include spawn Jackal launch
     spawn_jackal_launch = IncludeLaunchDescription(
@@ -65,6 +63,6 @@ def generate_launch_description():
         base_config_arg,
         flea_config_arg,
         config_arg,
-        empty_world_launch,
+        gz_sim_world,
         spawn_jackal_launch
     ])
