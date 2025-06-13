@@ -32,13 +32,21 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   DEPENDENCIES std_msgs sensor_msgs builtin_interfaces
 )
 
-install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}/
+install(DIRECTORY
+  launch
+  GazeboWorlds
+  urdf
+  config
+  DESTINATION share/${PROJECT_NAME}
 )
 
-install(DIRECTORY GazeboWorlds
-  DESTINATION share/${PROJECT_NAME}
+
+# Install Python nodes
+install(PROGRAMS
+  nodes/optical_flow.py
+  nodes/controller.py
+  nodes/tau_computation.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
