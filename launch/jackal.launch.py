@@ -81,7 +81,16 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
+            "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
+            "/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model",
+            "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
+            "/camera/image@sensor_msgs/msg/Image@gz.msgs.Image",
+            "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
+
+        ],        
         output='screen'
     )
 
@@ -90,7 +99,7 @@ def generate_launch_description():
         executable='optical_flow.py',
         name='optical_flow',
         arguments=['1'],
-        parameters=[{'image_sub_name': '/front/image_raw'}, {'use_sim_time': True}],
+        parameters=[{'image_sub_name': '/camera/image'}, {'use_sim_time': True}],
         output='screen'
     )
 
@@ -98,7 +107,7 @@ def generate_launch_description():
         package='vision_based_navigation_ttt',
         executable='tau_computation.py',
         name='tau_computation',
-        parameters=[{'image_sub_name': '/front/image_raw'}, {'use_sim_time': True}],
+        parameters=[{'image_sub_name': '/camera/image'}, {'use_sim_time': True}],
         output='screen'
     )
 

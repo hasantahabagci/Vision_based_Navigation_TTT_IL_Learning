@@ -36,6 +36,7 @@ install(DIRECTORY
   launch
   GazeboWorlds
   urdf
+  gui
   config
   DESTINATION share/${PROJECT_NAME}
 )
