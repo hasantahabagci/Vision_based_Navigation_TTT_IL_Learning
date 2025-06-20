@@ -159,8 +159,12 @@ class OFCalculator(Node):
             keypoints.extend(kp)
 
         if keypoints:
+            print(f"[DEBUG] Detected {len(keypoints)} total keypoints.")
+
             pts = cv2.KeyPoint_convert(keypoints)
             return np.float32(pts.reshape(-1, 1, 2))
+    
+
         return np.array([], dtype='f')
 
 def main(args=None):

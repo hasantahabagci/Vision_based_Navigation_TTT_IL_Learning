@@ -11,12 +11,12 @@ def generate_launch_description():
         DeclareLaunchArgument('x', default_value='0'),
         DeclareLaunchArgument('y', default_value='0'),
         DeclareLaunchArgument('z', default_value='0.01'),
-        DeclareLaunchArgument('yaw', default_value='1.57'),
+        DeclareLaunchArgument('yaw', default_value='0'),
     ]
 
     pkg_share = FindPackageShare('vision_based_navigation_ttt')
     xacro_path = PathJoinSubstitution([pkg_share, 'urdf', 'jackal_gazebo.urdf.xacro'])
-    #yaml_file = PathJoinSubstitution([pkg_share, 'config', 'control.yaml'])
+    yaml_file = PathJoinSubstitution([pkg_share, 'config', 'control.yaml'])
     world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'corridor.world'])
 
     robot_description = ParameterValue(
@@ -33,6 +33,8 @@ def generate_launch_description():
         cmd=['gz', 'sim', world_path],
         output='screen'
     )
+
+
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -89,33 +91,7 @@ def generate_launch_description():
             "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
             "/camera/image@sensor_msgs/msg/Image@gz.msgs.Image",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
-
         ],        
-        output='screen'
-    )
-
-    optical_flow_node = Node(
-        package='vision_based_navigation_ttt',
-        executable='optical_flow.py',
-        name='optical_flow',
-        arguments=['1'],
-        parameters=[{'image_sub_name': '/camera/image'}, {'use_sim_time': True}],
-        output='screen'
-    )
-
-    tau_node = Node(
-        package='vision_based_navigation_ttt',
-        executable='tau_computation.py',
-        name='tau_computation',
-        parameters=[{'image_sub_name': '/camera/image'}, {'use_sim_time': True}],
-        output='screen'
-    )
-
-    controller_node = Node(
-        package='vision_based_navigation_ttt',
-        executable='controller.py',
-        name='controller',
-        parameters=[{'use_sim_time': True}],
         output='screen'
     )
 
@@ -127,7 +103,4 @@ def generate_launch_description():
         load_jsb,
         load_diffdrive,
         bridge,
-        #optical_flow_node,
-        #tau_node,
-        #controller_node,
     ])
