@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy # Replaced "import rospy"
 from rclpy.node import Node
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import TwistStamped
 from vision_based_navigation_ttt.msg import TauComputation
 import numpy as np
 import time
@@ -50,7 +50,7 @@ class Controller(Node):
         self.max_control_diff = 0.5
         
         self.robot_publisher = "jackal_velocity_controller/cmd_vel"
-        self.publisher_ = self.create_publisher(Twist, 'jackal_velocity_controller/cmd_vel', 10)
+        self.publisher_ = self.create_publisher(TwistStamped, 'jackal_velocity_controller/cmd_vel', 10)
         #######################################
 
         # Tau Data Subscriber
@@ -141,14 +141,14 @@ class Controller(Node):
 
         # Steering signal Publisher Jackal
         #self.steering_signal = rospy.Publisher(self.robot_publisher, Twist, queue_size=10) <-- ROS1
-        self.steering_signal = self.create_publisher(Twist, self.robot_publisher, 10)
+        self.steering_signal = self.create_publisher(TwistStamped, self.robot_publisher, 10)
 
     def callback(self, data):
         # Boot phase performs only in the first sense phase to allow the stabilization of the OF values
         if self.init_cnt < self.max_init:
-            msg = Twist()
-            msg.linear.x = float(1)
-            msg.angular.z = float(0)
+            msg = TwistStamped()
+            msg.twist.linear.x = float(0.3)
+            msg.twist.angular.z = float(0)
             self.steering_signal.publish(msg)
             self.init_cnt += 1
             return
@@ -163,9 +163,9 @@ class Controller(Node):
             if self.sense_cnt <= (self.sense_rate * self.sense_duration):
 
                 # Go straight
-                msg = Twist()
-                msg.linear.x = float(1)
-                msg.angular.z = float(0)
+                msg = TwistStamped()
+                msg.twist.linear.x = float(0.3)
+                msg.twist.angular.z = float(0)
                 self.steering_signal.publish(msg)
 
                 # Data acquisition from TauValues topic
@@ -419,11 +419,17 @@ class Controller(Node):
                 control = threshold(control, self.max_u)
 
                 # Publish Steering signal
-                msg = Twist()
-                msg.linear.x = float(1)
-                msg.angular.z = float(control)
+                msg = TwistStamped()
+                msg.header.stamp = self.get_clock().now().to_msg()
+                msg.header.frame_id = "base_link"
+                linear_speed = 1  # was 1
+                angular_speed = max(-0.3, min(0.3, control))  # clamp control between [-0.5, 0.5]
+
+                msg.twist.linear.x = float(linear_speed)
+                msg.twist.angular.z = float(angular_speed)
 
                 self.steering_signal.publish(msg)
+
                 self.act_cnt += 1
                 #r_act.sleep()
                 time.sleep(1.0/self.act_rate)

@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="pine_forest_world">
+
+    <!-- Basic world setup from Fuel -->
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground%20Plane</uri>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+    
+    <model name="custom_wall">
+      <static>true</static>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box><size>10 0.1 2</size></box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box><size>10 0.1 2</size></box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+          </material>
+        </visual>
+        <pose>0 6 1 0 0 0</pose> <!-- Centered at y=6, height at 1m -->
+      </link>
+    </model>
+
+    <!-- Scattered Pine Trees -->
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_1</name>
+      <pose>3 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_2</name>
+      <pose>5 2 0 0 0 1.57</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_3</name>
+      <pose>7 10 0 0 0 -1.57</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_4</name>
+      <pose>2 4 0 0 0 0.3</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_5</name>
+      <pose>-1 1 0 0 0 0.6</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_6</name>
+      <pose>-3 3 0 0 0 -0.5</pose>
+    </include>
+
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_7</name>
+      <pose>0 12 0 0 0 0.4</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_8</name>
+      <pose>3 14 0 0 0 -0.3</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_9</name>
+      <pose>6 16 0 0 0 0.1</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_10</name>
+      <pose>9 13 0 0 0 0.2</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_11</name>
+      <pose>5 18 0 0 0 -0.6</pose>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
+      <name>pine_tree_12</name>
+      <pose>2 16 0 0 0 0.9</pose>
+    </include>
+
+    
+
+  </world>
+</sdf>

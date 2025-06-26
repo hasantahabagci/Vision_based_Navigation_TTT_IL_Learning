@@ -60,7 +60,8 @@ class OFCalculator(Node):
         self.min_feat_threshold = 1.0
         self.num_ext_features = 250
         self.num_cen_features = 100
-        self.min_num_features = (2 * self.num_ext_features + self.num_cen_features) / 2
+        #self.min_num_features = (2 * self.num_ext_features + self.num_cen_features) / 2
+        self.min_num_features = 150
 
         self.roi_el = np.array([])
         self.roi_er = np.array([])

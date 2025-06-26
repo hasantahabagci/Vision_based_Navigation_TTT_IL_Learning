@@ -9,7 +9,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     declared_args = [
         DeclareLaunchArgument('x', default_value='0'),
-        DeclareLaunchArgument('y', default_value='0'),
+        DeclareLaunchArgument('y', default_value='-10'),
         DeclareLaunchArgument('z', default_value='0.01'),
         DeclareLaunchArgument('yaw', default_value='1.57'),
     ]
@@ -17,7 +17,7 @@ def generate_launch_description():
     pkg_share = FindPackageShare('vision_based_navigation_ttt')
     xacro_path = PathJoinSubstitution([pkg_share, 'urdf', 'jackal_gazebo.urdf.xacro'])
     #yaml_file = PathJoinSubstitution([pkg_share, 'config', 'control.yaml'])
-    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'corridor.world'])
+    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'test.sdf'])
 
     robot_description = ParameterValue(
         Command(['xacro ', xacro_path]),
@@ -30,7 +30,7 @@ def generate_launch_description():
     )
 
     gz_world = ExecuteProcess(
-        cmd=['gz', 'sim', world_path],
+        cmd=['gz', 'sim', '-r', world_path],
         output='screen'
     )
 
@@ -127,7 +127,7 @@ def generate_launch_description():
         load_jsb,
         load_diffdrive,
         bridge,
-        #optical_flow_node,
-        #tau_node,
-        #controller_node,
+        optical_flow_node,
+        tau_node,
+        controller_node,
     ])

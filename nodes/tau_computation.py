@@ -281,17 +281,18 @@ class TauComputationClass(Node):
         # Publish Tau values data to rostopic
         # Creation of TauValues.msg
         msg = TauComputation()
-        msg.header.stamp.secs = data.header.stamp.secs
-        msg.header.stamp.nsecs = data.header.stamp.nsecs
+        msg.header.stamp.sec = data.header.stamp.sec
+        msg.header.stamp.nanosec = data.header.stamp.nanosec
+
 
         msg.height = data.height
         msg.width = data.width
 
-        msg.tau_el = final_tau_left_e
-        msg.tau_er = final_tau_right_e
-        msg.tau_l = final_tau_left
-        msg.tau_r = final_tau_right
-        msg.tau_c = final_tau_centre
+        msg.tau_el = float(final_tau_left_e)
+        msg.tau_er = float(final_tau_right_e)
+        msg.tau_l = float(final_tau_left)
+        msg.tau_r = float(final_tau_right)
+        msg.tau_c = float(final_tau_centre)
         self.tau_values.publish(msg)
 
         # Draw the ROIs with their TTT values
