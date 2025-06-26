@@ -57,12 +57,12 @@ class OFCalculator(Node):
         self.prev_kps = np.array([], dtype='f')
         self.prev_time = 0.0
         self.tracking = False
-        self.min_feat_threshold = 1.0
+        self.min_feat_threshold = 0.7
         self.num_ext_features = 250
-        self.num_cen_features = 100
+        self.num_cen_features = 150
         #self.min_num_features = (2 * self.num_ext_features + self.num_cen_features) / 2
-        self.min_num_features = 150
-
+        self.min_num_features = 200
+        
         self.roi_el = np.array([])
         self.roi_er = np.array([])
         self.roi_c = np.array([])

@@ -422,8 +422,8 @@ class Controller(Node):
                 msg = TwistStamped()
                 msg.header.stamp = self.get_clock().now().to_msg()
                 msg.header.frame_id = "base_link"
-                linear_speed = 1  # was 1
-                angular_speed = max(-0.3, min(0.3, control))  # clamp control between [-0.5, 0.5]
+                linear_speed = 0.3  # was 1
+                angular_speed = float(control)  # clamp control between [-0.5, 0.5]
 
                 msg.twist.linear.x = float(linear_speed)
                 msg.twist.angular.z = float(angular_speed)
