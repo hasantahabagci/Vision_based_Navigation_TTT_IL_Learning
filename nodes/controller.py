@@ -45,9 +45,10 @@ class Controller(Node):
         # Minimum number of features needed to compute the average TTT for each ROI
         # Percentage of discarded TTT values for each ROI
         self.percentage = 0.25
+
         # Saturation values for the control input
         self.max_u = 1
-        self.max_control_diff = 0.5
+        self.max_control_diff = 0.5 # WAS 0.5
         
         self.robot_publisher = "jackal_velocity_controller/cmd_vel"
         self.publisher_ = self.create_publisher(TwistStamped, 'jackal_velocity_controller/cmd_vel', 10)
@@ -422,7 +423,7 @@ class Controller(Node):
                 msg = TwistStamped()
                 msg.header.stamp = self.get_clock().now().to_msg()
                 msg.header.frame_id = "base_link"
-                linear_speed = 0.3  # was 1
+                linear_speed = 0.3 # was 1
                 angular_speed = float(control)  # clamp control between [-0.5, 0.5]
 
                 msg.twist.linear.x = float(linear_speed)

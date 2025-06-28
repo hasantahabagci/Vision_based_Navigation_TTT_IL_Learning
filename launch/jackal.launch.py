@@ -8,8 +8,8 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     declared_args = [
-        DeclareLaunchArgument('x', default_value='0'),
-        DeclareLaunchArgument('y', default_value='-10'),
+        DeclareLaunchArgument('x', default_value='1'),
+        DeclareLaunchArgument('y', default_value='-5'),
         DeclareLaunchArgument('z', default_value='0.01'),
         DeclareLaunchArgument('yaw', default_value='1.57'),
     ]
