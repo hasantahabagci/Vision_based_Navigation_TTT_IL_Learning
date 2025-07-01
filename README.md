@@ -110,3 +110,6 @@ Because ROS Noetic mainly features Python 3, which is a major shift from Python 
 `-->TabError: inconsistent use of tabs and spaces in indentation`
       
 We are working on a solution to guarantee full support for ROS Noetic.# Vision_based_Navigation_TTT
+
+### ROS-2 Jazzy Update for Ubuntu 24.04
+To extend the project to be compatible with current and up to date ROS 2 distrubution, I went ahead and added not only the jackal urdf but a new launch file that would run the nodes immediately after running **jackal.launch.py**.
