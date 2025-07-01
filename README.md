@@ -21,9 +21,9 @@ If you use the code in this repository, please cite [our paper](https://arxiv.or
 ## Prerequisites
 
 - Ubuntu 24.04.
-- Clearpath package to simulate Jackal UGV, use the following instruction: `sudo apt-get install ros-<distro>-jackal-simulator ros-<distro>-jackal-desktop ros-<distro>-jackal-navigation`.
+- Clearpath package to simulate Jackal UGV, use the following instruction: `sudo apt-get install ros-<distro>-jackal-simulator ros-<distro>-jackal-desktop ros-<distro>-jackal-navigation`. If not using local jackal urdf provided
 - Python 3.12
-
+- ROS-2 Control `sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers`
 ## Setup and use
 
 Our navigation strategy can be used with any mobile robot equipped with a monocular camera.
@@ -111,5 +111,19 @@ Because ROS Noetic mainly features Python 3, which is a major shift from Python 
       
 We are working on a solution to guarantee full support for ROS Noetic.# Vision_based_Navigation_TTT
 
-### ROS-2 Jazzy Update for Ubuntu 24.04
-To extend the project to be compatible with current and up to date ROS 2 distrubution, I went ahead and added not only the jackal urdf but a new launch file that would run the nodes immediately after running **jackal.launch.py**.
+### ROS 2 Jazzy Update for Ubuntu 24.04
+
+To extend the project’s compatibility with the latest [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/) distribution, I have migrated the codebase to ROS 2 Jazzy on Ubuntu 24.04. This update includes:
+
+- A fully integrated [Clearpath Jackal URDF](https://github.com/jackal/jackal) for ROS 2.
+- A new launch file [`jackal.launch.py`](./launch/jackal.launch.py) compatible.
+- Automatic node execution after simulation startup, streamlining the full workflow.
+- Adaptation of the core Python nodes (`optical_flow.py`, `tau_computation.py`, and `controller.py`) to ROS 2 architecture using `rclpy` and updated message types.
+
+This migration ensures the project remains relevant and fully functional on modern platforms while preserving its original design.
+
+[![ROS 2 Jazzy](https://img.shields.io/badge/ROS2-Jazzy-blueviolet)](https://docs.ros.org/en/jazzy/)
+[![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?logo=ubuntu)](https://releases.ubuntu.com/24.04/)
+[![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](./LICENSE)
+
+**ROS 2 Migration and Maintenance by Manuel Morteo.**
