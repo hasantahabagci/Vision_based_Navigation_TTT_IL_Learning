@@ -17,7 +17,7 @@ def generate_launch_description():
     pkg_share = FindPackageShare('vision_based_navigation_ttt')
     xacro_path = PathJoinSubstitution([pkg_share, 'urdf', 'jackal_gazebo.urdf.xacro'])
     #yaml_file = PathJoinSubstitution([pkg_share, 'config', 'control.yaml'])
-    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'test.sdf'])
+    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'lab_maze.world'])
 
     robot_description = ParameterValue(
         Command(['xacro ', xacro_path]),

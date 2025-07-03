@@ -19,13 +19,14 @@ If you use the code in this repository, please cite [our paper](https://arxiv.or
 }
 ```
 ## Prerequisites
-
+- Python 3.12
 - Ubuntu 24.04.
 - ROS2 Jazzy (EOL 2029) and Gazebo Harmonic
 - ROS-2 Control `sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers`
 
-- Clearpath package to simulate Jackal UGV, use the following instruction: `sudo apt-get install ros-<distro>-jackal-simulator ros-<distro>-jackal-desktop ros-<distro>-jackal-navigation`. If not using local jackal urdf provided
-- Python 3.12
+**If not using local jackal urdf provided**
+- Clearpath package to simulate Jackal UGV, use the following instruction: `sudo apt-get install ros-<distro>-jackal-simulator ros-<distro>-jackal-desktop ros-<distro>-jackal-navigation`. 
+
 
 ## Setup and use
 
@@ -123,13 +124,13 @@ To extend the project’s compatibility with the latest [ROS 2 Jazzy](https://do
 - Automatic node execution after simulation startup, streamlining the full workflow.
 - Adaptation of the core Python nodes (`optical_flow.py`, `tau_computation.py`, and `controller.py`) to ROS 2 architecture using `rclpy` and updated message types.
 - Included bare minimum jackal description .stl files. 
-
+- (under progress): world files not working properly.
 This migration ensures the project remains relevant and fully functional on modern platforms while preserving its original design.
 
 [![ROS 2 Jazzy](https://img.shields.io/badge/ROS2-Jazzy-blueviolet)](https://docs.ros.org/en/jazzy/)
 [![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?logo=ubuntu)](https://releases.ubuntu.com/24.04/)
 [![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](./LICENSE)
 
-***Current Test world*** :`test.sdf`
+***Current working worlds*** :`test.sdf` `corridor.world`
 
 **ROS 2 Migration and Maintenance by Manuel Morteo.**

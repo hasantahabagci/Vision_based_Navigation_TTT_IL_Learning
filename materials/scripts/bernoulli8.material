@@ -1,0 +1,13 @@
+material bernoulli08M
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bernoulli08M.png
+      }
+    }
+  }
+}

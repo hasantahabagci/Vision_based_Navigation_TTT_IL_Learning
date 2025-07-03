@@ -39,6 +39,7 @@ install(DIRECTORY
   gui
   config
   meshes
+  materials
   DESTINATION share/${PROJECT_NAME}
 )
 
