@@ -38,6 +38,7 @@ install(DIRECTORY
   urdf
   gui
   config
+  meshes
   DESTINATION share/${PROJECT_NAME}
 )
 
