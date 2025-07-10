@@ -133,6 +133,6 @@ This migration ensures the project remains relevant and fully functional on mode
 
 ![ROS2 Simulation](assets/ros2JazzySimulation.gif)
 
-***World in use:*** :`corridor_2.world`
+***World in use***:`corridor_2.world`
 
 **ROS 2 Migration and Maintenance by Manuel Morteo.**
