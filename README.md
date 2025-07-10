@@ -128,9 +128,11 @@ To extend the project’s compatibility with the latest [ROS 2 Jazzy](https://do
 - Automatic node execution after simulation startup, streamlining the full workflow.
 - Adaptation of the core Python nodes (`optical_flow.py`, `tau_computation.py`, and `controller.py`) to ROS 2 architecture using `rclpy` and updated message types.
 - Included bare minimum jackal description .stl files. 
-- (under progress): world files not working properly.
 This migration ensures the project remains relevant and fully functional on modern platforms while preserving its original design.
 
+### TODO:
+- Test on Jackal (Flash Ubuntu 24.04)
+- Create Docker Image
 ![ROS2 Simulation](assets/ros2JazzySimulation.gif)
 
 ***World in use***:`corridor_2.world`
