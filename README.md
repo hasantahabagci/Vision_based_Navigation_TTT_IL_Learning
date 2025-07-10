@@ -117,6 +117,10 @@ We are working on a solution to guarantee full support for ROS Noetic.# Vision_b
 
 ### ROS 2 Jazzy Update for Ubuntu 24.04
 
+[![ROS 2 Jazzy](https://img.shields.io/badge/ROS2-Jazzy-blueviolet)](https://docs.ros.org/en/jazzy/)
+[![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?logo=ubuntu)](https://releases.ubuntu.com/24.04/)
+[![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](./LICENSE)
+
 To extend the project’s compatibility with the latest [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/) distribution, I have migrated the codebase to ROS 2 Jazzy on Ubuntu 24.04. This update includes:
 
 - A fully integrated [Clearpath Jackal URDF](https://github.com/jackal/jackal) for ROS 2.
@@ -127,10 +131,8 @@ To extend the project’s compatibility with the latest [ROS 2 Jazzy](https://do
 - (under progress): world files not working properly.
 This migration ensures the project remains relevant and fully functional on modern platforms while preserving its original design.
 
-[![ROS 2 Jazzy](https://img.shields.io/badge/ROS2-Jazzy-blueviolet)](https://docs.ros.org/en/jazzy/)
-[![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04-E95420?logo=ubuntu)](https://releases.ubuntu.com/24.04/)
-[![License: BSD-2-Clause](https://img.shields.io/badge/License-BSD_2--Clause-blue.svg)](./LICENSE)
+![ROS2 Simulation](assets/ros2JazzySimulation.gif)
 
-***Current working worlds*** :`test.sdf` `corridor.world`
+***World in use:*** :`corridor_2.world`
 
 **ROS 2 Migration and Maintenance by Manuel Morteo.**

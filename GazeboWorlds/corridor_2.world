@@ -106,7 +106,7 @@
     <include>
       <name>tree_3</name>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
-      <pose>2.0 2.9470917115432527 0 0 0 0.5</pose>
+      <pose>2.0 3.5470917115432527 0 0 0 0.5</pose>
     </include>
     <include>
       <name>wall_14</name>
@@ -174,11 +174,7 @@
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
       <pose>7 2.817790927085965 0 0 1.57 0.2</pose>
     </include>
-    <include>
-      <name>wall_25</name>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
-      <pose>7.0 5.997868015207525 0 0 1.57 0</pose>
-    </include>
+
     <include>
       <name>wall_26</name>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
@@ -230,7 +226,7 @@
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Pine%20Tree</uri>
       <name>pine_tree_36</name>
-      <pose>6 20 0 0 0 -0.1</pose>
+      <pose>5.5 6.217790927085965 0 0 0 -0.1</pose>
     </include>
 
   </world>
