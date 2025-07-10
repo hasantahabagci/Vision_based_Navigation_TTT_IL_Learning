@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="smooth_curved_corridor_with_rotations">
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground%20Plane</uri>
+    </include>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+    <include>
+      <name>wall_1</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-10.0 -3.5464871341284088 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_2</name>21
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-10.0 -5.546487134128409 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_3</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-8.5 -3.958324052262343 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_4</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-8.5 -5.958324052262343 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_5</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-7.0 -3.9272486499423014 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_6</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-7.0 -5.927248649942301 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_7</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-5.5 -3.456036800307177 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_8</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-5.5 -5.456036800307177 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_9</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-4.0 -2.586780454497614 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_10</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-4.0 -4.586780454497614 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_11</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-2.5 -1.397127693021015 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_12</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-2.5 -3.397127693021015 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_13</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-1.0 0.006653346024693918 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_14</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>-1.0 -1.9933466539753062 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_15</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>0.5 1.4991670832341408 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_16</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>0.5 -0.5008329167658592 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_17</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>2.0 2.9470917115432527 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_18</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>2.0 0.9470917115432527 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_19</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>3.5 4.221088436188456 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_20</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>3.5 2.2210884361884555 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_21</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>5.0 5.207354924039483 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_22</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>5.0 3.2073549240394827 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_23</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>6.5 5.817790927085965 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_24</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>6.5 3.817790927085965 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_25</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>8.0 5.997868015207525 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_26</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>8.0 3.9978680152075254 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_27</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>9.5 5.731500438437072 0 0 1.57 0</pose>
+    </include>
+    <include>
+      <name>wall_28</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/NIST%20maze%20wall%20240</uri>
+      <pose>9.5 3.731500438437072 0 0 1.57 0</pose>
+    </include>
+  </world>
+</sdf>
