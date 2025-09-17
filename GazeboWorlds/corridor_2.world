@@ -215,5 +215,24 @@
       <pose>5.5 6.217790927085965 0 0 0 -0.1</pose>
     </include>
 
+    <!-- <plugin
+      filename="libgazebo_ros_init.so"
+      name="gazebo_ros_init">
+    </plugin>
+
+    <plugin
+      filename="libgazebo_ros_factory.so"
+      name="gazebo_ros_factory">
+    </plugin>
+    
+    <plugin
+      filename="libgazebo_ros_state.so"
+      name="gazebo_ros_state">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <update_rate>10.0</update_rate>
+    </plugin> -->
+
   </world>
 </sdf>
