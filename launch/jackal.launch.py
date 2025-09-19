@@ -22,7 +22,7 @@ def generate_launch_description():
     
     xacro_path = PathJoinSubstitution([pkg_share, 'urdf', 'jackal_gazebo.urdf.xacro'])
     #yaml_file = PathJoinSubstitution([pkg_share, 'config', 'control.yaml'])
-    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'corridor_2.world'])
+    world_path = PathJoinSubstitution([pkg_share, 'GazeboWorlds', 'corridor_2.sdf'])
 
     robot_description = ParameterValue(
         Command(['xacro ', xacro_path]),
@@ -94,6 +94,7 @@ def generate_launch_description():
             "/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
             "/camera/image@sensor_msgs/msg/Image@gz.msgs.Image",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
+            '/world/smooth_curved_corridor_with_rotations/set_pose@ros_gz_interfaces/srv/SetEntityPose',
 
         ],        
         output='screen'
